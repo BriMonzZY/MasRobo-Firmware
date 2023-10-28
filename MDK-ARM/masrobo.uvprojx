@@ -53,10 +53,10 @@
           <OutputName>masrobo</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
-          <CreateHexFile>1</CreateHexFile>
+          <CreateHexFile>0</CreateHexFile>
           <DebugInformation>1</DebugInformation>
           <BrowseInformation>1</BrowseInformation>
-          <ListingPath>.\</ListingPath>
+          <ListingPath>.\Listings\</ListingPath>
           <HexFormatSelection>1</HexFormatSelection>
           <Merge32K>0</Merge32K>
           <CreateBatchFile>0</CreateBatchFile>
@@ -190,13 +190,13 @@
             <nBranchProt>0</nBranchProt>
             <hadIRAM2>1</hadIRAM2>
             <hadIROM2>0</hadIROM2>
-            <StupSel>0</StupSel>
+            <StupSel>8</StupSel>
             <useUlib>0</useUlib>
             <EndSel>0</EndSel>
             <uLtcg>0</uLtcg>
             <nSecure>0</nSecure>
-            <RoSelD>0</RoSelD>
-            <RwSelD>5</RwSelD>
+            <RoSelD>3</RoSelD>
+            <RwSelD>4</RwSelD>
             <CodeSel>0</CodeSel>
             <OptFeed>0</OptFeed>
             <NoZi1>0</NoZi1>
@@ -207,12 +207,12 @@
             <Ro1Chk>0</Ro1Chk>
             <Ro2Chk>0</Ro2Chk>
             <Ro3Chk>0</Ro3Chk>
-            <Ir1Chk>0</Ir1Chk>
+            <Ir1Chk>1</Ir1Chk>
             <Ir2Chk>0</Ir2Chk>
             <Ra1Chk>0</Ra1Chk>
             <Ra2Chk>0</Ra2Chk>
             <Ra3Chk>0</Ra3Chk>
-            <Im1Chk>0</Im1Chk>
+            <Im1Chk>1</Im1Chk>
             <Im2Chk>0</Im2Chk>
             <OnChipMemories>
               <Ocm1>
@@ -328,7 +328,7 @@
             <uThumb>0</uThumb>
             <uSurpInc>0</uSurpInc>
             <uC99>1</uC99>
-            <uGnu>0</uGnu>
+            <uGnu>1</uGnu>
             <useXO>0</useXO>
             <v6Lang>1</v6Lang>
             <v6LangP>1</v6LangP>
@@ -339,9 +339,9 @@
             <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls></MiscControls>
-              <Define>USE_HAL_DRIVER,STM32F407xx,ARM_MATH_CM4,__FPU_USED=1U,__FPU_PRESENT=1U,__CC_ARM,ARM_MATH_MATRIX_CHECK,ARM_MATH_ROUNDING</Define>
+              <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>..\bsp\cubemx\rm_c\Core\Inc;..\bsp\cubemx\rm_c\Drivers\CMSIS\Include;..\bsp\cubemx\rm_c\Drivers\CMSIS\Device\ST\STM32F4xx\Include;..\bsp\cubemx\rm_c\Drivers\STM32F4xx_HAL_Driver\Inc;..\bsp\cubemx\rm_c\Drivers\STM32F4xx_HAL_Driver\Inc\Legacy;..\bsp\cubemx\rm_c\Middlewares\Third_Party\FreeRTOS\Source\include;..\bsp\cubemx\rm_c\Middlewares\Third_Party\FreeRTOS\Source\portable\RVDS\ARM_CM4F;..\bsp\cubemx\rm_c\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS</IncludePath>
+              <IncludePath>..\bsp\cubemx\rm_c\Core\Inc;..\bsp\cubemx\rm_c\Drivers\CMSIS\Include;..\bsp\cubemx\rm_c\Drivers\CMSIS\Device\ST\STM32F4xx\Include;..\bsp\cubemx\rm_c\Drivers\STM32F4xx_HAL_Driver\Inc;..\bsp\cubemx\rm_c\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS;..\bsp\cubemx\rm_c\Middlewares\Third_Party\FreeRTOS\Source\include;..\bsp\cubemx\rm_c\Middlewares\Third_Party\FreeRTOS\Source\portable\RVDS\ARM_CM4F</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -363,14 +363,14 @@
             </VariousControls>
           </Aads>
           <LDads>
-            <umfTarg>0</umfTarg>
+            <umfTarg>1</umfTarg>
             <Ropi>0</Ropi>
             <Rwpi>0</Rwpi>
             <noStLib>0</noStLib>
             <RepFail>1</RepFail>
             <useFile>0</useFile>
-            <TextAddressRange></TextAddressRange>
-            <DataAddressRange></DataAddressRange>
+            <TextAddressRange>0x08000000</TextAddressRange>
+            <DataAddressRange>0x20000000</DataAddressRange>
             <pXoBase></pXoBase>
             <ScatterFile></ScatterFile>
             <IncludeLibs></IncludeLibs>
@@ -386,11 +386,6 @@
           <GroupName>stm32f4xx_hal</GroupName>
           <Files>
             <File>
-              <FileName>startup_stm32f407xx.s</FileName>
-              <FileType>2</FileType>
-              <FilePath>..\bsp\cubemx\rm_c\MDK-ARM\startup_stm32f407xx.s</FilePath>
-            </File>
-            <File>
               <FileName>stm32f4xx_hal.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\bsp\cubemx\rm_c\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.c</FilePath>
@@ -399,6 +394,11 @@
               <FileName>stm32f4xx_hal_adc.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\bsp\cubemx\rm_c\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_adc.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_hal_adc_ex.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\bsp\cubemx\rm_c\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_adc_ex.c</FilePath>
             </File>
             <File>
               <FileName>stm32f4xx_hal_can.c</FileName>
@@ -416,6 +416,11 @@
               <FilePath>..\bsp\cubemx\rm_c\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dac.c</FilePath>
             </File>
             <File>
+              <FileName>stm32f4xx_hal_dac_ex.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\bsp\cubemx\rm_c\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dac_ex.c</FilePath>
+            </File>
+            <File>
               <FileName>stm32f4xx_hal_dma.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\bsp\cubemx\rm_c\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma.c</FilePath>
@@ -426,6 +431,11 @@
               <FilePath>..\bsp\cubemx\rm_c\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma_ex.c</FilePath>
             </File>
             <File>
+              <FileName>stm32f4xx_hal_exti.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\bsp\cubemx\rm_c\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_exti.c</FilePath>
+            </File>
+            <File>
               <FileName>stm32f4xx_hal_flash.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\bsp\cubemx\rm_c\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash.c</FilePath>
@@ -434,11 +444,6 @@
               <FileName>stm32f4xx_hal_flash_ex.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\bsp\cubemx\rm_c\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ex.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f4xx_hal_flash_ramfunc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\bsp\cubemx\rm_c\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ramfunc.c</FilePath>
             </File>
             <File>
               <FileName>stm32f4xx_hal_gpio.c</FileName>
@@ -516,20 +521,25 @@
               <FilePath>..\bsp\cubemx\rm_c\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_wwdg.c</FilePath>
             </File>
             <File>
-              <FileName>stm32f4xx_ll_usb.c</FileName>
+              <FileName>startup_stm32f407xx.s</FileName>
+              <FileType>2</FileType>
+              <FilePath>..\bsp\cubemx\rm_c\MDK-ARM\startup_stm32f407xx.s</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_hal_rtc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\bsp\cubemx\rm_c\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_usb.c</FilePath>
+              <FilePath>..\bsp\cubemx\rm_c\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rtc.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_hal_rtc_ex.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\bsp\cubemx\rm_c\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rtc_ex.c</FilePath>
             </File>
           </Files>
         </Group>
         <Group>
           <GroupName>freertos</GroupName>
           <Files>
-            <File>
-              <FileName>cmsis_os.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\bsp\cubemx\rm_c\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS\cmsis_os.c</FilePath>
-            </File>
             <File>
               <FileName>croutine.c</FileName>
               <FileType>1</FileType>
@@ -575,15 +585,25 @@
               <FileType>1</FileType>
               <FilePath>..\bsp\cubemx\rm_c\Middlewares\Third_Party\FreeRTOS\Source\portable\RVDS\ARM_CM4F\port.c</FilePath>
             </File>
+            <File>
+              <FileName>cmsis_os.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\bsp\cubemx\rm_c\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS\cmsis_os.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
           <GroupName>cubemx</GroupName>
           <Files>
             <File>
-              <FileName>main.c</FileName>
+              <FileName>can.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\bsp\cubemx\rm_c\Core\Src\main.c</FilePath>
+              <FilePath>..\bsp\cubemx\rm_c\Core\Src\can.c</FilePath>
+            </File>
+            <File>
+              <FileName>dma.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\bsp\cubemx\rm_c\Core\Src\dma.c</FilePath>
             </File>
             <File>
               <FileName>freertos.c</FileName>
@@ -594,6 +614,26 @@
               <FileName>gpio.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\bsp\cubemx\rm_c\Core\Src\gpio.c</FilePath>
+            </File>
+            <File>
+              <FileName>i2c.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\bsp\cubemx\rm_c\Core\Src\i2c.c</FilePath>
+            </File>
+            <File>
+              <FileName>main.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\bsp\cubemx\rm_c\Core\Src\main.c</FilePath>
+            </File>
+            <File>
+              <FileName>rng.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\bsp\cubemx\rm_c\Core\Src\rng.c</FilePath>
+            </File>
+            <File>
+              <FileName>spi.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\bsp\cubemx\rm_c\Core\Src\spi.c</FilePath>
             </File>
             <File>
               <FileName>stm32f4xx_hal_msp.c</FileName>
@@ -614,31 +654,6 @@
               <FileName>system_stm32f4xx.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\bsp\cubemx\rm_c\Core\Src\system_stm32f4xx.c</FilePath>
-            </File>
-            <File>
-              <FileName>can.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\bsp\cubemx\rm_c\Core\Src\can.c</FilePath>
-            </File>
-            <File>
-              <FileName>dma.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\bsp\cubemx\rm_c\Core\Src\dma.c</FilePath>
-            </File>
-            <File>
-              <FileName>i2c.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\bsp\cubemx\rm_c\Core\Src\i2c.c</FilePath>
-            </File>
-            <File>
-              <FileName>rng.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\bsp\cubemx\rm_c\Core\Src\rng.c</FilePath>
-            </File>
-            <File>
-              <FileName>spi.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\bsp\cubemx\rm_c\Core\Src\spi.c</FilePath>
             </File>
             <File>
               <FileName>usart.c</FileName>
