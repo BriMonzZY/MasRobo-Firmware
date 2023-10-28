@@ -13,6 +13,7 @@
 ..\build\mdk-arm\main.o: ..\bsp\cubemx\rm_c\Drivers\CMSIS\Include\cmsis_armcc.h
 ..\build\mdk-arm\main.o: ..\bsp\cubemx\rm_c\Drivers\CMSIS\Include\mpu_armv7.h
 ..\build\mdk-arm\main.o: ..\bsp\cubemx\rm_c\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h
+..\build\mdk-arm\main.o: ..\bsp\cubemx\rm_c\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h
 ..\build\mdk-arm\main.o: ..\bsp\cubemx\rm_c\Drivers\STM32F4xx_HAL_Driver\Inc\Legacy/stm32_hal_legacy.h
 ..\build\mdk-arm\main.o: C:\Keil_v5\ARM\ARM_Compiler_5.06u7\Bin\..\include\stddef.h
 ..\build\mdk-arm\main.o: ..\bsp\cubemx\rm_c\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc_ex.h
@@ -35,6 +36,9 @@
 ..\build\mdk-arm\main.o: ..\bsp\cubemx\rm_c\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim.h
 ..\build\mdk-arm\main.o: ..\bsp\cubemx\rm_c\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim_ex.h
 ..\build\mdk-arm\main.o: ..\bsp\cubemx\rm_c\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h
+..\build\mdk-arm\main.o: ..\bsp\cubemx\rm_c\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pcd.h
+..\build\mdk-arm\main.o: ..\bsp\cubemx\rm_c\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_usb.h
+..\build\mdk-arm\main.o: ..\bsp\cubemx\rm_c\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pcd_ex.h
 ..\build\mdk-arm\main.o: ..\bsp\cubemx\rm_c\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS\cmsis_os.h
 ..\build\mdk-arm\main.o: ..\bsp\cubemx\rm_c\Middlewares\Third_Party\FreeRTOS\Source\include\FreeRTOS.h
 ..\build\mdk-arm\main.o: ..\bsp\cubemx\rm_c\Core\Inc\FreeRTOSConfig.h
@@ -55,4 +59,10 @@
 ..\build\mdk-arm\main.o: ..\bsp\cubemx\rm_c\Core\Inc\rng.h
 ..\build\mdk-arm\main.o: ..\bsp\cubemx\rm_c\Core\Inc\spi.h
 ..\build\mdk-arm\main.o: ..\bsp\cubemx\rm_c\Core\Inc\usart.h
+..\build\mdk-arm\main.o: ..\bsp\cubemx\rm_c\USB_DEVICE\App\usb_device.h
+..\build\mdk-arm\main.o: ..\bsp\cubemx\rm_c\Middlewares\ST\STM32_USB_Device_Library\Core\Inc\usbd_def.h
+..\build\mdk-arm\main.o: ..\bsp\cubemx\rm_c\USB_DEVICE\Target\usbd_conf.h
+..\build\mdk-arm\main.o: C:\Keil_v5\ARM\ARM_Compiler_5.06u7\Bin\..\include\stdio.h
+..\build\mdk-arm\main.o: C:\Keil_v5\ARM\ARM_Compiler_5.06u7\Bin\..\include\stdlib.h
+..\build\mdk-arm\main.o: C:\Keil_v5\ARM\ARM_Compiler_5.06u7\Bin\..\include\string.h
 ..\build\mdk-arm\main.o: ..\bsp\cubemx\rm_c\Core\Inc\gpio.h

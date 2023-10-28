@@ -12,6 +12,7 @@
 ..\build\mdk-arm\stm32f4xx_hal_dma_ex.o: ..\bsp\cubemx\rm_c\Drivers\CMSIS\Include\cmsis_armcc.h
 ..\build\mdk-arm\stm32f4xx_hal_dma_ex.o: ..\bsp\cubemx\rm_c\Drivers\CMSIS\Include\mpu_armv7.h
 ..\build\mdk-arm\stm32f4xx_hal_dma_ex.o: ..\bsp\cubemx\rm_c\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h
+..\build\mdk-arm\stm32f4xx_hal_dma_ex.o: ..\bsp\cubemx\rm_c\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h
 ..\build\mdk-arm\stm32f4xx_hal_dma_ex.o: ..\bsp\cubemx\rm_c\Drivers\STM32F4xx_HAL_Driver\Inc\Legacy/stm32_hal_legacy.h
 ..\build\mdk-arm\stm32f4xx_hal_dma_ex.o: C:\Keil_v5\ARM\ARM_Compiler_5.06u7\Bin\..\include\stddef.h
 ..\build\mdk-arm\stm32f4xx_hal_dma_ex.o: ..\bsp\cubemx\rm_c\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc_ex.h
@@ -34,3 +35,6 @@
 ..\build\mdk-arm\stm32f4xx_hal_dma_ex.o: ..\bsp\cubemx\rm_c\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim.h
 ..\build\mdk-arm\stm32f4xx_hal_dma_ex.o: ..\bsp\cubemx\rm_c\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim_ex.h
 ..\build\mdk-arm\stm32f4xx_hal_dma_ex.o: ..\bsp\cubemx\rm_c\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h
+..\build\mdk-arm\stm32f4xx_hal_dma_ex.o: ..\bsp\cubemx\rm_c\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pcd.h
+..\build\mdk-arm\stm32f4xx_hal_dma_ex.o: ..\bsp\cubemx\rm_c\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_usb.h
+..\build\mdk-arm\stm32f4xx_hal_dma_ex.o: ..\bsp\cubemx\rm_c\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pcd_ex.h

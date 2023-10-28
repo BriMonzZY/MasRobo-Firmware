@@ -191,7 +191,7 @@
             <hadIRAM2>1</hadIRAM2>
             <hadIROM2>0</hadIROM2>
             <StupSel>8</StupSel>
-            <useUlib>0</useUlib>
+            <useUlib>1</useUlib>
             <EndSel>0</EndSel>
             <uLtcg>0</uLtcg>
             <nSecure>0</nSecure>
@@ -339,9 +339,9 @@
             <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls></MiscControls>
-              <Define></Define>
+              <Define>USE_HAL_DRIVER,STM32F407xx,ARM_MATH_CM4,__FPU_USED=1U,__FPU_PRESENT=1U,__CC_ARM,ARM_MATH_MATRIX_CHECK,ARM_MATH_ROUNDING</Define>
               <Undefine></Undefine>
-              <IncludePath>..\bsp\cubemx\rm_c\Core\Inc;..\bsp\cubemx\rm_c\Drivers\CMSIS\Include;..\bsp\cubemx\rm_c\Drivers\CMSIS\Device\ST\STM32F4xx\Include;..\bsp\cubemx\rm_c\Drivers\STM32F4xx_HAL_Driver\Inc;..\bsp\cubemx\rm_c\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS;..\bsp\cubemx\rm_c\Middlewares\Third_Party\FreeRTOS\Source\include;..\bsp\cubemx\rm_c\Middlewares\Third_Party\FreeRTOS\Source\portable\RVDS\ARM_CM4F</IncludePath>
+              <IncludePath>..\bsp\cubemx\rm_c\Core\Inc;..\bsp\cubemx\rm_c\Drivers\CMSIS\Include;..\bsp\cubemx\rm_c\Drivers\CMSIS\Device\ST\STM32F4xx\Include;..\bsp\cubemx\rm_c\Drivers\STM32F4xx_HAL_Driver\Inc;..\bsp\cubemx\rm_c\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS;..\bsp\cubemx\rm_c\Middlewares\Third_Party\FreeRTOS\Source\include;..\bsp\cubemx\rm_c\Middlewares\Third_Party\FreeRTOS\Source\portable\RVDS\ARM_CM4F;..\app;..\app\chassis;..\app\gimbal;..\bsp\cubemx\rm_c\USB_DEVICE\App;..\bsp\cubemx\rm_c\USB_DEVICE\Target;..\bsp\cubemx\rm_c\Middlewares\ST\STM32_USB_Device_Library\Core\Inc;..\bsp\cubemx\rm_c\Middlewares\ST\STM32_USB_Device_Library\Class\CDC\Inc</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -385,6 +385,11 @@
         <Group>
           <GroupName>stm32f4xx_hal</GroupName>
           <Files>
+            <File>
+              <FileName>startup_stm32f407xx.s</FileName>
+              <FileType>2</FileType>
+              <FilePath>..\bsp\cubemx\rm_c\MDK-ARM\startup_stm32f407xx.s</FilePath>
+            </File>
             <File>
               <FileName>stm32f4xx_hal.c</FileName>
               <FileType>1</FileType>
@@ -521,11 +526,6 @@
               <FilePath>..\bsp\cubemx\rm_c\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_wwdg.c</FilePath>
             </File>
             <File>
-              <FileName>startup_stm32f407xx.s</FileName>
-              <FileType>2</FileType>
-              <FilePath>..\bsp\cubemx\rm_c\MDK-ARM\startup_stm32f407xx.s</FilePath>
-            </File>
-            <File>
               <FileName>stm32f4xx_hal_rtc.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\bsp\cubemx\rm_c\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rtc.c</FilePath>
@@ -535,11 +535,36 @@
               <FileType>1</FileType>
               <FilePath>..\bsp\cubemx\rm_c\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rtc_ex.c</FilePath>
             </File>
+            <File>
+              <FileName>stm32f4xx_hal_pcd.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\bsp\cubemx\rm_c\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pcd.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_hal_pcd_ex.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\bsp\cubemx\rm_c\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pcd_ex.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_hal_flash_ramfunc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\bsp\cubemx\rm_c\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ramfunc.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_ll_usb.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\bsp\cubemx\rm_c\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_usb.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
           <GroupName>freertos</GroupName>
           <Files>
+            <File>
+              <FileName>cmsis_os.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\bsp\cubemx\rm_c\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS\cmsis_os.c</FilePath>
+            </File>
             <File>
               <FileName>croutine.c</FileName>
               <FileType>1</FileType>
@@ -561,11 +586,6 @@
               <FilePath>..\bsp\cubemx\rm_c\Middlewares\Third_Party\FreeRTOS\Source\queue.c</FilePath>
             </File>
             <File>
-              <FileName>stream_buffer.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\bsp\cubemx\rm_c\Middlewares\Third_Party\FreeRTOS\Source\stream_buffer.c</FilePath>
-            </File>
-            <File>
               <FileName>tasks.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\bsp\cubemx\rm_c\Middlewares\Third_Party\FreeRTOS\Source\tasks.c</FilePath>
@@ -585,16 +605,21 @@
               <FileType>1</FileType>
               <FilePath>..\bsp\cubemx\rm_c\Middlewares\Third_Party\FreeRTOS\Source\portable\RVDS\ARM_CM4F\port.c</FilePath>
             </File>
-            <File>
-              <FileName>cmsis_os.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\bsp\cubemx\rm_c\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS\cmsis_os.c</FilePath>
-            </File>
           </Files>
         </Group>
         <Group>
           <GroupName>cubemx</GroupName>
           <Files>
+            <File>
+              <FileName>main.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\bsp\cubemx\rm_c\Core\Src\main.c</FilePath>
+            </File>
+            <File>
+              <FileName>freertos.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\bsp\cubemx\rm_c\Core\Src\freertos.c</FilePath>
+            </File>
             <File>
               <FileName>can.c</FileName>
               <FileType>1</FileType>
@@ -604,11 +629,6 @@
               <FileName>dma.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\bsp\cubemx\rm_c\Core\Src\dma.c</FilePath>
-            </File>
-            <File>
-              <FileName>freertos.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\bsp\cubemx\rm_c\Core\Src\freertos.c</FilePath>
             </File>
             <File>
               <FileName>gpio.c</FileName>
@@ -621,11 +641,6 @@
               <FilePath>..\bsp\cubemx\rm_c\Core\Src\i2c.c</FilePath>
             </File>
             <File>
-              <FileName>main.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\bsp\cubemx\rm_c\Core\Src\main.c</FilePath>
-            </File>
-            <File>
               <FileName>rng.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\bsp\cubemx\rm_c\Core\Src\rng.c</FilePath>
@@ -636,14 +651,9 @@
               <FilePath>..\bsp\cubemx\rm_c\Core\Src\spi.c</FilePath>
             </File>
             <File>
-              <FileName>stm32f4xx_hal_msp.c</FileName>
+              <FileName>usart.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\bsp\cubemx\rm_c\Core\Src\stm32f4xx_hal_msp.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f4xx_hal_timebase_tim.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\bsp\cubemx\rm_c\Core\Src\stm32f4xx_hal_timebase_tim.c</FilePath>
+              <FilePath>..\bsp\cubemx\rm_c\Core\Src\usart.c</FilePath>
             </File>
             <File>
               <FileName>stm32f4xx_it.c</FileName>
@@ -656,9 +666,54 @@
               <FilePath>..\bsp\cubemx\rm_c\Core\Src\system_stm32f4xx.c</FilePath>
             </File>
             <File>
-              <FileName>usart.c</FileName>
+              <FileName>stm32f4xx_hal_timebase_tim.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\bsp\cubemx\rm_c\Core\Src\usart.c</FilePath>
+              <FilePath>..\bsp\cubemx\rm_c\Core\Src\stm32f4xx_hal_timebase_tim.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_hal_msp.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\bsp\cubemx\rm_c\Core\Src\stm32f4xx_hal_msp.c</FilePath>
+            </File>
+            <File>
+              <FileName>usb_device.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\bsp\cubemx\rm_c\USB_DEVICE\App\usb_device.c</FilePath>
+            </File>
+            <File>
+              <FileName>usbd_cdc_if.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\bsp\cubemx\rm_c\USB_DEVICE\App\usbd_cdc_if.c</FilePath>
+            </File>
+            <File>
+              <FileName>usbd_desc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\bsp\cubemx\rm_c\USB_DEVICE\App\usbd_desc.c</FilePath>
+            </File>
+            <File>
+              <FileName>usbd_conf.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\bsp\cubemx\rm_c\USB_DEVICE\Target\usbd_conf.c</FilePath>
+            </File>
+            <File>
+              <FileName>usbd_core.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\bsp\cubemx\rm_c\Middlewares\ST\STM32_USB_Device_Library\Core\Src\usbd_core.c</FilePath>
+            </File>
+            <File>
+              <FileName>usbd_ctlreq.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\bsp\cubemx\rm_c\Middlewares\ST\STM32_USB_Device_Library\Core\Src\usbd_ctlreq.c</FilePath>
+            </File>
+            <File>
+              <FileName>usbd_ioreq.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\bsp\cubemx\rm_c\Middlewares\ST\STM32_USB_Device_Library\Core\Src\usbd_ioreq.c</FilePath>
+            </File>
+            <File>
+              <FileName>usbd_cdc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\bsp\cubemx\rm_c\Middlewares\ST\STM32_USB_Device_Library\Class\CDC\Src\usbd_cdc.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -667,12 +722,19 @@
         </Group>
         <Group>
           <GroupName>app</GroupName>
+          <Files>
+            <File>
+              <FileName>init.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\app\init.c</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
-          <GroupName>chassis_app</GroupName>
+          <GroupName>chassis</GroupName>
         </Group>
         <Group>
-          <GroupName>gimbal_app</GroupName>
+          <GroupName>gimbal</GroupName>
         </Group>
       </Groups>
     </Target>
