@@ -59,3 +59,17 @@
 ..\build\mdk-arm\init.o: ..\bsp\cubemx\rm_c\Middlewares\Third_Party\FreeRTOS\Source\include\semphr.h
 ..\build\mdk-arm\init.o: ..\bsp\cubemx\rm_c\Middlewares\Third_Party\FreeRTOS\Source\include\event_groups.h
 ..\build\mdk-arm\init.o: ..\bsp\cubemx\rm_c\Core\Inc\usart.h
+..\build\mdk-arm\init.o: ..\bsp\boards\drv_uart.h
+..\build\mdk-arm\init.o: ..\bsp\cubemx\rm_c\Core\Inc\dma.h
+..\build\mdk-arm\init.o: ..\bsp\boards\drv_uart.h
+..\build\mdk-arm\init.o: ..\modules\support\fifo.h
+..\build\mdk-arm\init.o: C:\Keil_v5\ARM\ARM_Compiler_5.06u7\Bin\..\include\string.h
+..\build\mdk-arm\init.o: ..\modules\support\sys.h
+..\build\mdk-arm\init.o: C:\Keil_v5\ARM\ARM_Compiler_5.06u7\Bin\..\include\stdarg.h
+..\build\mdk-arm\init.o: C:\Keil_v5\ARM\ARM_Compiler_5.06u7\Bin\..\include\math.h
+..\build\mdk-arm\init.o: C:\Keil_v5\ARM\ARM_Compiler_5.06u7\Bin\..\include\errno.h
+..\build\mdk-arm\init.o: ..\modules\support\linux_list.h
+..\build\mdk-arm\init.o: ..\bsp\cubemx\rm_c\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS\cmsis_os.h
+..\build\mdk-arm\init.o: ..\modules\algorithm\my_math.h
+..\build\mdk-arm\init.o: ..\modules\log\log.h
+..\build\mdk-arm\init.o: ..\modules\log\log_config.h

@@ -12,15 +12,11 @@
 #include "init.h"
 
 
-/* temp temp temp temp */
-int fputc(int ch, FILE *f)
+
+void board_init()
 {
-    uint8_t temp[1] = {ch};
-    HAL_UART_Transmit(&huart1, temp, 1, 2);  /* huart1 */
-    return ch;
+	usart1_manage_init();
 }
-
-
 
 
 
@@ -31,11 +27,9 @@ int fputc(int ch, FILE *f)
  */
 void StartDefaultTask(void const * argument)
 {
+	board_init();
 
-
-
-    printf("MasRobo-Firmware by BriMonzZY\n\n");
-	
+    log_printf("MasRobo-Firmware by BriMonzZY\n\n");
 	
     while(1) {
         HAL_GPIO_TogglePin(LED_R_GPIO_Port, LED_R_Pin);

@@ -32,7 +32,7 @@ del *.elf /s
 del *.args /s
 del *.mk /s
 del *.local /s
-del *.uvguix.* /s
+del JLinkLog.txt /s
 
 
 exit
