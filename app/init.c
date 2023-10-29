@@ -11,6 +11,9 @@
 
 #include "init.h"
 
+#include "drv_uart.h"
+#include "log.h"
+
 
 /* temp temp temp temp */
 int fputc(int ch, FILE *f)
@@ -31,11 +34,10 @@ int fputc(int ch, FILE *f)
  */
 void StartDefaultTask(void const * argument)
 {
+	usart1_manage_init();
 
-
-
-    printf("MasRobo-Firmware by BriMonzZY\n\n");
-	
+    log_printf("MasRobo-Firmware by BriMonzZY\n\n");
+	log_e("Mas");
 	
     while(1) {
         HAL_GPIO_TogglePin(LED_R_GPIO_Port, LED_R_Pin);
