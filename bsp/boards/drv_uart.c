@@ -11,16 +11,11 @@
 
 #include "drv_uart.h"
 
-extern UART_HandleTypeDef huart6;
-extern DMA_HandleTypeDef hdma_usart6_rx;
-extern DMA_HandleTypeDef hdma_usart6_tx;
+
 static uint8_t usart6_rx_buff[USART6_RX_BUFFER_SIZE];
 static uint8_t usart6_tx_buff[USART6_TX_BUFFER_SIZE];
 static uint8_t usart6_tx_fifo_buff[USART6_TX_FIFO_SIZE];
 
-extern UART_HandleTypeDef huart1;
-extern DMA_HandleTypeDef hdma_usart1_rx;
-extern DMA_HandleTypeDef hdma_usart1_tx;
 static uint8_t usart1_rx_buff[USART1_RX_BUFFER_SIZE];
 static uint8_t usart1_tx_buff[USART1_TX_BUFFER_SIZE];
 static uint8_t usart1_tx_fifo_buff[USART1_TX_FIFO_SIZE];
@@ -31,7 +26,7 @@ usart_manage_obj_t usart6_manage_obj = {0};
 static void usart_rec_to_buff(usart_manage_obj_t *m_obj, interrput_type int_type);
 static void usart_transmit_hook(usart_manage_obj_t *m_obj);
 
-/********************** Custom API **********************************************/
+
 void debug_raw_printf(char *fmt, ...)
 {
     va_list arg;
@@ -42,20 +37,17 @@ void debug_raw_printf(char *fmt, ...)
     printf_len = vsnprintf((char *)buff, USART1_PRINTF_BUFF_SIZE, fmt, arg);
     va_end(arg);
 
-    if (printf_len > USART1_PRINTF_BUFF_SIZE)
-    {
+    if (printf_len > USART1_PRINTF_BUFF_SIZE) {
         printf_len = USART1_PRINTF_BUFF_SIZE;
     }
 
     HAL_UART_Transmit(&huart1, (uint8_t *)buff, printf_len, 0xFFFF);
 }
 
-/********************** Custom API **********************************************/
-
+/* USART1 IDLE callback */
 void usart1_idle_callback(void)
 {
-    if (__HAL_UART_GET_FLAG(&huart1, UART_FLAG_IDLE))
-    {
+    if (__HAL_UART_GET_FLAG(&huart1, UART_FLAG_IDLE)) {
         __HAL_UART_CLEAR_IDLEFLAG(&huart1);
         usart_rec_to_buff(&usart1_manage_obj, INTERRUPT_TYPE_UART);
     }
@@ -63,12 +55,13 @@ void usart1_idle_callback(void)
 
 void usart6_idle_callback(void)
 {
-    if (__HAL_UART_GET_FLAG(&huart6, UART_FLAG_IDLE))
-    {
+    if (__HAL_UART_GET_FLAG(&huart6, UART_FLAG_IDLE)) {
         __HAL_UART_CLEAR_IDLEFLAG(&huart6);
         usart_rec_to_buff(&usart6_manage_obj, INTERRUPT_TYPE_UART);
     }
 }
+
+/* initial the usart manage */
 
 void usart1_manage_init(void)
 {
@@ -108,7 +101,6 @@ void usart6_manage_init(void)
 
 int usart1_printf(char *fmt, ...)
 {
-
     va_list arg;
     uint8_t buff[USART1_PRINTF_BUFF_SIZE];
     uint8_t printf_len;
@@ -117,8 +109,7 @@ int usart1_printf(char *fmt, ...)
     printf_len = vsnprintf((char *)buff, USART1_PRINTF_BUFF_SIZE, fmt, arg);
     va_end(arg);
 
-    if (printf_len > USART1_PRINTF_BUFF_SIZE)
-    {
+    if (printf_len > USART1_PRINTF_BUFF_SIZE) {
         printf_len = USART1_PRINTF_BUFF_SIZE;
     }
 
